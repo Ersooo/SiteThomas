@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    text-align: center;
+    background-color: white;
+}
+
+.navigation {
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #343a40;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.navigation-element {
+    padding-top: 0.3125rem;
+    padding-left: 2rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+.redirection {
+    font-size: 1rem;
+}
+
+.partie-logo {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    background-color: #495057;
+}
+
+.image-logo {
+    width: 10rem;
+}
+
+.nom-logo {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    color: white;
+}
+
+.categorie {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+section {
+    padding: 6rem 0;
+    position: relative;
+}
+
+h2, h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.grille {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.titre-categorie {
+    font-size: 2.25rem;
+    line-height: 2rem;
+    padding-bottom: 1em;
+    text-align: center;
+    text-transform: uppercase
+}
+
+.titre-page {
+    font-size: 2.25rem;
+    line-height: 2rem;
+    padding-bottom: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.image-categorie {
+    max-width: 95%;
+    height: 30rem;
+}
+
+footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #495057;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    min-height: 1rem;
+}
+
+.bas-page {
+    position: absolute;
+    bottom: 0;
+}
+
+input[type=text], select, textarea, input[type=password] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+.container {
+    border: thick double;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.titre-champ-inscription {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.valeur-champ-inscription {
+    float: left;
+    width: 65%;
+    margin-top: 6px;
+    margin-bottom: 1em;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
