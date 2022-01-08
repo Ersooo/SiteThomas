@@ -21,11 +21,8 @@ if (isset($_REQUEST['nom'], $_REQUEST['prenom'], $_REQUEST['identifiant'], $_REQ
     $pwd = $data['password'];
     $database = $data['database'];
     $conn = new PDO("mysql:host=$server;dbname=$database", $user, $pwd);
-    echo "1";
     $req = $conn->prepare('INSERT INTO User VALUE (?,?,?,?)');
-    echo "1";
     $req->execute(array($_REQUEST['nom'], $_REQUEST['prenom'], $_REQUEST['identifiant'], $_REQUEST['mdp']));
-    echo "1";
     ?>
     <section>
         <h2 class="titre-page">Inscription réussite</h2>

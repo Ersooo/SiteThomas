@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 08 jan. 2022 à 19:56
+-- Généré le :  sam. 08 jan. 2022 à 23:14
 -- Version du serveur :  10.4.6-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -31,7 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `commentary` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `id_user` varchar(100) DEFAULT NULL,
-  `texte` varchar(300) DEFAULT NULL
+  `texte` varchar(300) DEFAULT NULL,
+  `date` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -42,7 +43,8 @@ CREATE TABLE `commentary` (
 
 CREATE TABLE `tournament` (
   `id` char(30) NOT NULL,
-  `id_user` varchar(100) DEFAULT NULL
+  `id_user` varchar(100) NOT NULL,
+  `pseudo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -74,7 +76,7 @@ ALTER TABLE `commentary`
 -- Index pour la table `tournament`
 --
 ALTER TABLE `tournament`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`,`id_user`,`pseudo`),
   ADD KEY `id_user` (`id_user`);
 
 --
