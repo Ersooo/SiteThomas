@@ -45,7 +45,7 @@ body {
 }
 
 .image-logo {
-    width: 10rem;
+    width: 15rem;
 }
 
 .image-logo-jeux {
@@ -107,6 +107,23 @@ h3, h2, h1 {
     font-family: sans-serif;
     margin-top: 4rem;
     margin-bottom: 2rem;
+}
+
+.titre-page-jeux {
+    font-size: 2.25rem;
+    line-height: 2rem;
+    padding-bottom: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+	border: thick double;
+	background-color: #f2f2f2;
+    padding: 20px;
+    margin-left: 1em;
+    margin-right: 1em;
+	
 }
 
 .image-categorie {
@@ -187,6 +204,29 @@ input[type=submit]:hover {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+}
+
+.container-forum {
+    border: thick double;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-left: 1em;
+    margin-right: 1em;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(1, 1fr);
+    grid-gap: 10px;
+	margin-bottom: 1em;
+}
+
+.msg-forum {
+	grid-column: span 2;
+	text-align: left;
+}
+
+.pseudo-forum {
+	margin: auto
 }
 
 .desc-jeux {

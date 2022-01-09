@@ -9,9 +9,9 @@
 <body class="body-jeux">
 <nav class="navigation">
     <div>
-        <a class="navigation-element" href="home.html">ICN E-Sport</a>
-		<a class="navigation-element redirection" href="register.php">Inscription</a>
-        <a class="navigation-element redirection" href="signin.php">Connexion</a>
+        <a class="navigation-element" href="homeConnected.html">ICN E-Sport</a>
+		<a class="navigation-element redirection" href="tournament.php">Inscription tournoi</a>
+        <a class="navigation-element redirection" href="home.html">Déconnexion</a>
     </div>
 </nav>
 

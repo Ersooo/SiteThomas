@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Thomas</title>
+    <title>ICN E-Sport | Connexion</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     <link href="css/styles_home.css" rel="stylesheet"/>
 </head>
@@ -10,7 +10,7 @@
 
 <nav class="navigation">
     <div>
-        <a class="navigation-element" href="home.html">Site Thomas</a>
+        <a class="navigation-element" href="home.html">ICN E-Sport</a>
     </div>
 </nav>
 
