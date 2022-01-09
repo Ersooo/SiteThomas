@@ -10,6 +10,7 @@
 <nav class="navigation">
     <div>
         <a class="navigation-element" href="homeConnected.html">ICN E-Sport</a>
+		<a class="navigation-element redirection" href="commentary.php">Écrire un message</a>
 		<a class="navigation-element redirection" href="tournament.php">Inscription tournoi</a>
         <a class="navigation-element redirection" href="home.html">Déconnexion</a>
     </div>
