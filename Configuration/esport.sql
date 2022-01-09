@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 08 jan. 2022 à 23:14
+-- Généré le :  Dim 09 jan. 2022 à 10:59
 -- Version du serveur :  10.4.6-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -32,7 +32,7 @@ CREATE TABLE `commentary` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `id_user` varchar(100) DEFAULT NULL,
   `texte` varchar(300) DEFAULT NULL,
-  `date` date DEFAULT current_timestamp()
+  `date` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

@@ -14,7 +14,7 @@
 </nav>
 
 <?php
-if (isset($_REQUEST['nom'], $_REQUEST['prenom'], $_REQUEST['identifiant'], $_REQUEST['mdp'])) {
+if (isset($_REQUEST['identifiant'], $_REQUEST['texte'])) {
     $data = parse_ini_file('Configuration/db.config.ini');
     $server = $data['host'];
     $user = $data['username'];
@@ -24,13 +24,13 @@ if (isset($_REQUEST['nom'], $_REQUEST['prenom'], $_REQUEST['identifiant'], $_REQ
     $req = $conn->prepare('SELECT * from User where id = ?');
     $req->execute(array($_REQUEST['identifiant']));
     $row = $req->fetch(PDO::FETCH_ASSOC);
-    if ($row) {
+    if (!$row) {
         ?>
         <section>
-            <h2 class="titre-page">Inscription échouée</h2>
+            <h2 class="titre-page">Ajout du commentaire échoué</h2>
             <div class="container">
                 <div class="row">
-                    <div class="texte"> Votre identifiant est déjà utilisé.
+                    <div class="texte"> Votre identifiant est incorrect.
                     </div>
                     <form name="x" action="commentary.php" method="post">
                         <input type="submit" value="réessayer">
@@ -40,18 +40,19 @@ if (isset($_REQUEST['nom'], $_REQUEST['prenom'], $_REQUEST['identifiant'], $_REQ
         </section>
         <?php
     } else {
-        $req = $conn->prepare('INSERT INTO User VALUE (?,?,?,?)');
-        $req->execute(array($_REQUEST['nom'], $_REQUEST['prenom'], $_REQUEST['identifiant'], $_REQUEST['mdp']));
+        $conn = new PDO("mysql:host=$server;dbname=$database", $user, $pwd);
+        $req = $conn->prepare('INSERT INTO Commentary(id_user, texte) VALUE (?,?)');
+        $req->execute(array($_REQUEST['identifiant'], $_REQUEST['texte']));
         ?>
         <section>
-            <h2 class="titre-page">Inscription réussite</h2>
+            <h2 class="titre-page"> Ajout du commentaire réussit </h2>
             <div class="container">
                 <div class="row">
                     <div class="texte">
-                        On vous remercie pour votre inscription, vous pouvez désormais vous connecter.
+                        On vous remercie pour votre commentaire.
                     </div>
-                    <form name="x" action="signin.php" method="post">
-                        <input type="submit" value="se connecter">
+                    <form name="x" action="homeConnected.html" method="post">
+                        <input type="submit" value="retour à l'accueil">
                     </form>
                 </div>
             </div>
@@ -61,41 +62,25 @@ if (isset($_REQUEST['nom'], $_REQUEST['prenom'], $_REQUEST['identifiant'], $_REQ
 } else {
     ?>
     <section>
-        <h2 class="titre-page">Inscription</h2>
+        <h2 class="titre-page">Ajout d'un commentaire</h2>
         <div class="container">
-            <form action="register.php">
+            <form action="commentary.php">
                 <div class="row">
                     <div class="titre-champ-inscription">
-                        <label for="nom-inscription">Nom de famille</label>
+                        <label for="nom-inscription">Identifiant</label>
                     </div>
                     <div class="valeur-champ-inscription">
-                        <input type="text" id="nom-inscription" name="nom" placeholder="Votre nom.." required>
+                        <input type="text" id="nom-inscription" name="identifiant" placeholder="Votre identifiant.."
+                               required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="titre-champ-inscription">
-                        <label for="prenom-inscription">Prénom</label>
+                        <label for="prenom-inscription">Commentaire</label>
                     </div>
                     <div class="valeur-champ-inscription">
-                        <input type="text" id="prenom-inscription" name="prenom" placeholder="Votre prénom.." required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="titre-champ-inscription">
-                        <label for="id-inscription">Identifiant</label>
-                    </div>
-                    <div class="valeur-champ-inscription">
-                        <input type="text" id="id-inscription" minlength="4" name="identifiant"
-                               placeholder="Votre identifiant.." required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="titre-champ-inscription">
-                        <label for="mdp-inscription">Mot de passe</label>
-                    </div>
-                    <div class="valeur-champ-inscription">
-                        <input type="password" id="mdp-inscription" minlength="8" name="mdp"
-                               placeholder="Votre mot de passe.." required>
+                        <textarea id="prenom-inscription" name="texte" placeholder="Votre commentaire..."
+                                  rows="5" cols="33" required></textarea>
                     </div>
                 </div>
                 <br>
